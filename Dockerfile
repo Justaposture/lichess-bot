@@ -10,8 +10,8 @@ RUN wget https://abrok.eu/stockfish/latest/linux/stockfish_x64_bmi2.zip -O stock
 RUN unzip stockfish.zip && rm stockfish.zip
 RUN mv stockfish_* engines/stockfish && chmod +x engines/stockfish
 
-RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/MEGA/Goi5.1.bin.7z" -O Goi5.1.bin.7z 
-RUN 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z
+RUN wget https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/MEGA/Goi5.1.bin.7z -O Goi5.1.7z 
+RUN 7zr e Goi5.1.7z && rm Goi5.1.7z
 
 # Add the "--matchmaking" flag to start the matchmaking mode.
 CMD python3 lichess-bot.py
