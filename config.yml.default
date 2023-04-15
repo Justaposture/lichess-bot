@@ -9,11 +9,10 @@ engine:                      # Engine settings.
   ponder: true               # Think on opponent's time.
 
   polyglot:
-    enabled: false           # Activate polyglot book.
+    enabled: true           # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
-        - engines/book1.bin
-        - engines/book2.bin
+        - engines/Goi5.1.bin
 #     atomic:                # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
 #       - engines/atomicbook2.bin
@@ -44,7 +43,7 @@ engine:                      # Engine settings.
       min_depth: 20          # Only for move_quality: "best".
       contribute: true
     lichess_cloud_analysis:
-      enabled: true
+      enabled: false
       min_time: 20
       move_quality: "good"   # One of "good", "best".
       max_score_difference: 50 # Only for move_quality: "good". The maximum score difference (in cp) between the best move and the other moves.
@@ -59,7 +58,7 @@ engine:                      # Engine settings.
 
   lichess_bot_tbs:           # The tablebases list here will be read by lichess-bot, not the engine.
     syzygy:
-      enabled: true
+      enabled: false
       paths:
         - "3-4-5/"
       max_pieces: 7
@@ -81,9 +80,7 @@ engine:                      # Engine settings.
   uci_options:               # Arbitrary UCI options passed to the engine.
     Move Overhead: 100       # Increase if your bot flags games too often.
     Threads: 8               # Max CPU threads the engine can use.
-    Hash: 256                # Max memory (in megabytes) the engine can allocate.
-    SyzygyPath: "3-4-5/"  # Paths to Syzygy endgame tablebases
-    Ponder: true
+    Hash: 11469                # Max memory (in megabytes) the engine can allocate.
 #   go_commands:             # Additional options to pass to the UCI go command.
 #     nodes: 1               # Search so many nodes only.
 #     depth: 5               # Search depth ply only.
